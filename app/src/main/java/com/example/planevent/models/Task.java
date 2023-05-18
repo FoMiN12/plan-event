@@ -1,51 +1,28 @@
 package com.example.planevent.models;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+//import androidx.room.PrimaryKey;
 
-import java.sql.Date;
+import com.example.planevent.models.parent.classes.EventElement;
+
+import java.util.Date;
 
 @Entity(tableName = "tasks_table")
-public class Task {
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+public class Task extends EventElement {
+//    @PrimaryKey(autoGenerate = true)
+//    private int id;
 //    @ForeignKey(entity = Event.class)
-    private int eventId;
-    @NonNull
-    private String name;
-    private String description;
+    @ColumnInfo(name = "target_date")
     private Date targetDate;
+    @ColumnInfo(name = "is_done")
     private Boolean isDone;
 
-    public Task(int id, int eventId, @NonNull String name, String description, Date targetDate, Boolean isDone) {
-        this.id = id;
-        this.eventId = eventId;
-        this.name = name;
-        this.description = description;
+    public Task(int eventId, @NonNull String name, String description, Date targetDate, Boolean isDone) {
+        super(eventId, name, description);
         this.targetDate = targetDate;
         this.isDone = isDone;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    @NonNull
-    public String getName() {
-        return name;
-    }
-
-    public void setName(@NonNull String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Date getTargetDate() {

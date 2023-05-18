@@ -1,55 +1,27 @@
 package com.example.planevent.models;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+
+import com.example.planevent.models.parent.classes.EventElement;
 
 @Entity (tableName = "expenses_table")
-public class Expense {
-    @PrimaryKey(autoGenerate = true)
-    private int ID;
-    @NonNull
-    private String name;
-    private String description;
-    private long cost;
+public class Expense extends EventElement {
+    @ColumnInfo(name = "cost")
+    private Long cost;
 
-    public Expense(@NonNull String name, String description, long cost) {
-        this.name = name;
-        this.description = description;
+
+    public Expense(int eventId, @NonNull String name, String description, Long cost) {
+        super(eventId, name, description);
         this.cost = cost;
     }
 
-    public Expense(@NonNull String name) {
-        this.name = name;
-        this.cost = 0;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    @NonNull
-    public String getName() {
-        return name;
-    }
-
-    public void setName(@NonNull String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public long getCost() {
+    public Long getCost() {
         return cost;
     }
 
-    public void setCost(long cost) {
+    public void setCost(Long cost) {
         this.cost = cost;
     }
 }

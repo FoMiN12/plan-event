@@ -1,44 +1,28 @@
 package com.example.planevent.models;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+
+import com.example.planevent.models.parent.classes.EventElement;
+import com.example.planevent.util.Gender;
 
 @Entity(tableName = "invites_table")
-public class InviteTemplate {
-    @PrimaryKey(autoGenerate = true)
-    private int ID;
-    @NonNull
-    private String name;
-    private String description;
-    private Boolean targetGender;
+public class InviteTemplate extends EventElement {
+    @ColumnInfo(name = "target_gender")
+    private Gender targetGender;
 
-    public int getID() {
-        return ID;
+    public InviteTemplate(int eventId, @NonNull String name, String description, Gender targetGender) {
+        super(eventId, name, description);
+        this.targetGender = targetGender;
     }
 
-    @NonNull
-    public String getName() {
-        return name;
-    }
 
-    public void setName(@NonNull String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Boolean getTargetGender() {
+    public Gender getTargetGender() {
         return targetGender;
     }
 
-    public void setTargetGender(Boolean targetGender) {
+    public void setTargetGender(Gender targetGender) {
         this.targetGender = targetGender;
     }
 }
