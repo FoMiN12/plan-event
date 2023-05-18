@@ -1,10 +1,10 @@
-package com.example.planevent.models;
+package com.example.planevent.entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 
-import com.example.planevent.models.parent.classes.EventElement;
+import com.example.planevent.entities.parent.classes.EventElement;
 
 import java.util.Date;
 

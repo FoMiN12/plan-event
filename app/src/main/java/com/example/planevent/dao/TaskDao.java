@@ -5,7 +5,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.planevent.models.Task;
+import com.example.planevent.entities.Task;
 
 public interface TaskDao {
     @Insert

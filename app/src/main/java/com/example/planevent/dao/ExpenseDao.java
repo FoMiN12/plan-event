@@ -5,7 +5,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.planevent.models.Expense;
+import com.example.planevent.entities.Expense;
 
 public interface ExpenseDao {
     @Insert

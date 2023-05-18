@@ -1,4 +1,4 @@
-package com.example.planevent.models.converters;
+package com.example.planevent.converters;
 
 import androidx.room.TypeConverter;
 

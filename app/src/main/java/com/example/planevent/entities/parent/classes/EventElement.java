@@ -1,14 +1,11 @@
-package com.example.planevent.models.parent.classes;
+package com.example.planevent.entities.parent.classes;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
 
-import com.example.planevent.models.Event;
-import com.example.planevent.models.parent.classes.DataObject;
-
-import java.util.Date;
+import com.example.planevent.entities.Event;
 
 @Entity(foreignKeys = {@ForeignKey(entity = Event.class,
         parentColumns = "id",

@@ -1,4 +1,4 @@
-package com.example.planevent.models.parent.classes;
+package com.example.planevent.entities.parent.classes;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

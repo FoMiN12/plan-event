@@ -5,7 +5,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.planevent.models.InviteTemplate;
+import com.example.planevent.entities.InviteTemplate;
 
 public interface inviteTemplateDao {
     @Insert

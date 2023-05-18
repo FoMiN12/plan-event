@@ -1,4 +1,4 @@
-package com.example.planevent.models;
+package com.example.planevent.entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

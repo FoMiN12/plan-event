@@ -7,12 +7,12 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.planevent.dao.TaskDao;
-import com.example.planevent.models.Event;
-import com.example.planevent.models.Expense;
-import com.example.planevent.models.Guest;
-import com.example.planevent.models.InviteTemplate;
-import com.example.planevent.models.ScheduleTask;
-import com.example.planevent.models.Task;
+import com.example.planevent.entities.Event;
+import com.example.planevent.entities.Expense;
+import com.example.planevent.entities.Guest;
+import com.example.planevent.entities.InviteTemplate;
+import com.example.planevent.entities.ScheduleTask;
+import com.example.planevent.entities.Task;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
