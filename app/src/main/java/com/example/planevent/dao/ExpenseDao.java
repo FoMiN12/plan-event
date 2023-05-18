@@ -1,22 +1,13 @@
 package com.example.planevent.dao;
 
-import androidx.room.Delete;
-import androidx.room.Insert;
+import androidx.room.Dao;
 import androidx.room.Query;
-import androidx.room.Update;
 
+import com.example.planevent.dao.parent.interfaces.CommonDao;
 import com.example.planevent.entities.Expense;
 
-public interface ExpenseDao {
-    @Insert
-    void insert(Expense expense);
-
-    @Update
-    void update(Expense expense);
-
-    @Delete
-    void delete(Expense expense);
-
+@Dao
+public interface ExpenseDao extends CommonDao<Expense> {
     @Query("DELETE FROM expenses_table")
     void deleteAllNotes();
 }

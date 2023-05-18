@@ -13,6 +13,7 @@ import com.example.planevent.entities.Guest;
 import com.example.planevent.entities.InviteTemplate;
 import com.example.planevent.entities.ScheduleTask;
 import com.example.planevent.entities.Task;
+import com.example.planevent.entities.User;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -22,7 +23,8 @@ import java.util.concurrent.Executors;
         Expense.class,
         InviteTemplate.class,
         ScheduleTask.class,
-        Event.class,},
+        Event.class,
+        User.class},
         version = 1, exportSchema = false)
 public abstract class AppRoomDatabase extends RoomDatabase {
     public abstract TaskDao taskDao();

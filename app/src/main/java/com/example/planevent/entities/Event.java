@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.Relation;
 
 import com.example.planevent.entities.parent.classes.DataObject;
@@ -19,11 +21,15 @@ public class Event extends DataObject {
     @ColumnInfo(name = "user_id")
     private final int userId;
     @Relation(parentColumn = "id",entityColumn = "event_id")
+    @Ignore
     private final LinkedList<Task> tasks;
+    @Ignore
     @Relation(parentColumn = "id",entityColumn = "event_id")
     private final LinkedList<Guest> guests;
+    @Ignore
     @Relation(parentColumn = "id",entityColumn = "event_id")
     private final LinkedList<Expense> expenses;
+    @Ignore
     @Relation(parentColumn = "id",entityColumn = "event_id")
     private final LinkedList<InviteTemplate> inviteTemplates;
 

@@ -3,6 +3,7 @@ package com.example.planevent.entities;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.Relation;
 
@@ -16,6 +17,8 @@ public class User {
     private String email;
     @ColumnInfo(name = "password_hash")
     private int passwordHash;
+    @Ignore
+    @Relation(parentColumn = "id", entityColumn = "user_id")
     private final LinkedList<Event> events;
 
     public User(@NonNull String email, int passwordHash) {
@@ -48,10 +51,13 @@ public class User {
     public void setPasswordHash(int passwordHash) {
         this.passwordHash = passwordHash;
     }
-    @Relation(parentColumn = "id", entityColumn = "user_id")
+
+    @Ignore
     public LinkedList<Event> getEvents() {
         return events;
     }
+
+
 
 
 }

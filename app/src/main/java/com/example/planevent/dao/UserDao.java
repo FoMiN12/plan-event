@@ -1,12 +1,11 @@
 package com.example.planevent.dao;
 
-
 import androidx.room.Query;
 
 import com.example.planevent.dao.parent.interfaces.CommonDao;
-import com.example.planevent.entities.Guest;
+import com.example.planevent.entities.User;
 
-public interface GuestDao extends CommonDao<Guest> {
-    @Query("DELETE FROM guests_table")
+public interface UserDao extends CommonDao<User> {
+    @Query("DELETE FROM users_table")
     void deleteAllNotes();
 }
