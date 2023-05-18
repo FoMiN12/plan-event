@@ -24,7 +24,7 @@ public class User {
     public User(@NonNull String email, int passwordHash) {
         this.email = email;
         this.passwordHash = passwordHash;
-        this.events = new LinkedList<Event>();
+        this.events = new LinkedList<>();
     }
 
     public int getId() {

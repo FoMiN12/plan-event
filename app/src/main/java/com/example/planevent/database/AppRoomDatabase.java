@@ -8,7 +8,13 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 import com.example.planevent.converters.DateConverter;
+import com.example.planevent.dao.EventDao;
+import com.example.planevent.dao.ExpenseDao;
+import com.example.planevent.dao.GuestDao;
+import com.example.planevent.dao.InviteTemplateDao;
+import com.example.planevent.dao.ScheduleTaskDao;
 import com.example.planevent.dao.TaskDao;
+import com.example.planevent.dao.UserDao;
 import com.example.planevent.entities.Event;
 import com.example.planevent.entities.Expense;
 import com.example.planevent.entities.Guest;
@@ -31,6 +37,12 @@ import java.util.concurrent.Executors;
 @TypeConverters({DateConverter.class})
 public abstract class AppRoomDatabase extends RoomDatabase {
     public abstract TaskDao taskDao();
+    public abstract GuestDao guestDaoDao();
+    public abstract ExpenseDao expenseDao();
+    public abstract InviteTemplateDao inviteTemplateDao();
+    public abstract ScheduleTaskDao scheduleTaskDao();
+    public abstract EventDao eventDao();
+    public abstract UserDao userDao();
 
     private static volatile AppRoomDatabase appRoomDatabase;
     private static final int NUMBER_OF_THREADS = 4;
