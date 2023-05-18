@@ -3,7 +3,7 @@ package com.example.planevent.models;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-//import androidx.room.PrimaryKey;
+
 
 import com.example.planevent.models.parent.classes.EventElement;
 
@@ -11,9 +11,6 @@ import java.util.Date;
 
 @Entity(tableName = "tasks_table")
 public class Task extends EventElement {
-//    @PrimaryKey(autoGenerate = true)
-//    private int id;
-//    @ForeignKey(entity = Event.class)
     @ColumnInfo(name = "target_date")
     private Date targetDate;
     @ColumnInfo(name = "is_done")

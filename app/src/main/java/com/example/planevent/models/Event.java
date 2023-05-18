@@ -3,6 +3,7 @@ package com.example.planevent.models;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.Relation;
@@ -12,7 +13,11 @@ import com.example.planevent.models.parent.classes.DataObject;
 import java.util.LinkedList;
 import java.util.List;
 
-@Entity (tableName = "events_table")
+@Entity (tableName = "events_table",
+        foreignKeys = {@ForeignKey(entity = User.class,
+                parentColumns = "id",
+                childColumns = "user_id",
+                onDelete = ForeignKey.CASCADE)})
 public class Event extends DataObject {
     @ColumnInfo(name = "user_id")
     private final int userId;
