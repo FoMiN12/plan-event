@@ -5,7 +5,9 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
+import com.example.planevent.converters.DateConverter;
 import com.example.planevent.dao.TaskDao;
 import com.example.planevent.entities.Event;
 import com.example.planevent.entities.Expense;
@@ -26,6 +28,7 @@ import java.util.concurrent.Executors;
         Event.class,
         User.class},
         version = 1, exportSchema = false)
+@TypeConverters({DateConverter.class})
 public abstract class AppRoomDatabase extends RoomDatabase {
     public abstract TaskDao taskDao();
 

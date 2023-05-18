@@ -16,7 +16,8 @@ import java.util.LinkedList;
         foreignKeys = {@ForeignKey(entity = User.class,
                 parentColumns = "id",
                 childColumns = "user_id",
-                onDelete = ForeignKey.CASCADE)})
+                onDelete = ForeignKey.CASCADE)},
+        indices = {@Index(value = "user_id")})
 public class Event extends DataObject {
     @ColumnInfo(name = "user_id")
     private final int userId;

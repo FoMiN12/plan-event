@@ -18,7 +18,7 @@ public class DataObject {
     private String name;
     @NonNull
     @ColumnInfo(name = "creating_date")
-    private final Date creatingDate;
+    private Date creatingDate;
 
     public DataObject(@NonNull String name) {
         this.name = name;
@@ -33,10 +33,15 @@ public class DataObject {
         this.id = id;
     }
 
+    public void setCreatingDate(@NonNull Date creatingDate) {
+        this.creatingDate = creatingDate;
+    }
+
     @NonNull
     public Date getCreatingDate() {
         return creatingDate;
     }
+
 
     @NonNull
     public String getName() {
