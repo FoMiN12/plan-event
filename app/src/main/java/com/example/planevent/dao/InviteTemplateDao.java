@@ -5,6 +5,9 @@ import androidx.room.Query;
 
 import com.example.planevent.dao.parent.interfaces.CommonDao;
 import com.example.planevent.entities.InviteTemplate;
+import com.example.planevent.entities.ScheduleTask;
+
+import java.util.List;
 
 @Dao
 public interface InviteTemplateDao extends CommonDao<InviteTemplate> {
@@ -14,4 +17,7 @@ public interface InviteTemplateDao extends CommonDao<InviteTemplate> {
 
     @Query("SELECT * FROM invites_table WHERE id LIKE :id")
     InviteTemplate findById(int id);
+
+    @Query("SELECT * FROM invites_table WHERE event_id = :eventId")
+    List<InviteTemplate> getInvitesByEventId(int eventId);
 }
