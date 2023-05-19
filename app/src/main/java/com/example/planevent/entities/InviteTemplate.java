@@ -20,7 +20,7 @@ public class InviteTemplate extends EventElement {
 
     @Ignore
     public InviteTemplate(int eventId, @NonNull String name) {
-        this(eventId, name, "", null);
+        this(eventId, name, "", Gender.NOTMENTIONED);
     }
     @Ignore
     public InviteTemplate(int eventId, @NonNull String name, Gender targetGender) {
@@ -28,7 +28,7 @@ public class InviteTemplate extends EventElement {
     }
     @Ignore
     public InviteTemplate(int eventId, @NonNull String name, String description) {
-        this(eventId, name, description, null);
+        this(eventId, name, description, Gender.NOTMENTIONED);
     }
 
 
