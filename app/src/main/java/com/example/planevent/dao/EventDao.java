@@ -1,5 +1,6 @@
 package com.example.planevent.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Query;
 
@@ -17,5 +18,5 @@ public interface EventDao extends CommonDao<Event> {
     Event findById(int id);
 
     @Query("SELECT * FROM events_table WHERE user_id = :userId")
-    List<Event> getEventsByUserId(int userId);
+    LiveData<List<Event>> getEventsByUserId(int userId);
 }

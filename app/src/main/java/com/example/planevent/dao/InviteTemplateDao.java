@@ -1,5 +1,6 @@
 package com.example.planevent.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Query;
 
@@ -19,5 +20,5 @@ public interface InviteTemplateDao extends CommonDao<InviteTemplate> {
     InviteTemplate findById(int id);
 
     @Query("SELECT * FROM invites_table WHERE event_id = :eventId")
-    List<InviteTemplate> getInvitesByEventId(int eventId);
+    LiveData<List<InviteTemplate>> getInvitesByEventId(int eventId);
 }
