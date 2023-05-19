@@ -15,11 +15,14 @@ public class EventElement extends DataObject {
     private final int eventId;
     private String description;
 
-
     public EventElement(int eventId, @NonNull String name, String description) {
         super(name);
         this.eventId = eventId;
         this.description = description;
+    }
+
+    public EventElement(int eventId, @NonNull String name) {
+        this(eventId, name, "");
     }
 
     public int getEventId() {

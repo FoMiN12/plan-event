@@ -37,10 +37,10 @@ public class Event extends DataObject {
     public Event(int userId, @NonNull String name) {
         super(name);
         this.userId = userId;
-        this.tasks = new LinkedList<Task>();
-        this.guests = new LinkedList<Guest>();
-        this.expenses = new LinkedList<Expense>();
-        this.inviteTemplates = new LinkedList<InviteTemplate>();
+        this.tasks = new LinkedList<>();
+        this.guests = new LinkedList<>();
+        this.expenses = new LinkedList<>();
+        this.inviteTemplates = new LinkedList<>();
     }
 
     public int getUserId() {

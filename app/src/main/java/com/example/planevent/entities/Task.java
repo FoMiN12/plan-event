@@ -3,6 +3,7 @@ package com.example.planevent.entities;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 
 
 import com.example.planevent.entities.parent.classes.EventElement;
@@ -20,6 +21,34 @@ public class Task extends EventElement {
         super(eventId, name, description);
         this.targetDate = targetDate;
         this.isDone = isDone;
+    }
+    @Ignore
+    public Task(int eventId, @NonNull String name) {
+        this(eventId,name,"",null,false);
+    }
+    @Ignore
+    public Task(int eventId, @NonNull String name, Date targetDate, Boolean isDone) {
+        this(eventId,name,"",targetDate,isDone);
+    }
+    @Ignore
+    public Task(int eventId, @NonNull String name, String description, Date targetDate) {
+        this(eventId,name,description,targetDate,false);
+    }
+    @Ignore
+    public Task(int eventId, @NonNull String name, String description, Boolean isDone) {
+        this(eventId,name,description,null,isDone);
+    }
+    @Ignore
+    public Task(int eventId, @NonNull String name, Boolean isDone) {
+        this(eventId,name,"",null,isDone);
+    }
+    @Ignore
+    public Task(int eventId, @NonNull String name, String description) {
+        this(eventId,name,description,null, false);
+    }
+    @Ignore
+    public Task(int eventId, @NonNull String name, Date targetDate) {
+        this(eventId,name,"",targetDate,false);
     }
 
     public Date getTargetDate() {
