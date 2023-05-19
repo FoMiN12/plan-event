@@ -17,6 +17,18 @@ public class Expense extends EventElement {
         this.cost = cost;
     }
 
+    public Expense(int eventId, @NonNull String name) {
+        this(eventId, name, "", null);
+    }
+
+    public Expense(int eventId, @NonNull String name, Long cost) {
+        this(eventId, name, "", cost);
+    }
+
+    public Expense(int eventId, @NonNull String name, String description) {
+        this(eventId, name, description, null);
+    }
+
     public Long getCost() {
         return cost;
     }
