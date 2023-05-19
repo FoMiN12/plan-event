@@ -3,6 +3,7 @@ package com.example.planevent.entities;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 
 import com.example.planevent.entities.parent.classes.EventElement;
 
@@ -15,6 +16,18 @@ public class Expense extends EventElement {
     public Expense(int eventId, @NonNull String name, String description, Long cost) {
         super(eventId, name, description);
         this.cost = cost;
+    }
+    @Ignore
+    public Expense(int eventId, @NonNull String name) {
+        this(eventId, name, "", null);
+    }
+    @Ignore
+    public Expense(int eventId, @NonNull String name, Long cost) {
+        this(eventId, name, "", cost);
+    }
+    @Ignore
+    public Expense(int eventId, @NonNull String name, String description) {
+        this(eventId, name, description, null);
     }
 
     public Long getCost() {
