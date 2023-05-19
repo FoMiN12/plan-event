@@ -30,6 +30,7 @@ public class Expense extends EventElement {
         this(eventId, name, description, null);
     }
 
+
     public Long getCost() {
         return cost;
     }
