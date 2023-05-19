@@ -57,7 +57,4 @@ public class User {
         return events;
     }
 
-
-
-
 }

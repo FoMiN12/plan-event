@@ -46,9 +46,9 @@ public abstract class AppRoomDatabase extends RoomDatabase {
 
     private static volatile AppRoomDatabase appRoomDatabase;
     private static final int NUMBER_OF_THREADS = 4;
-    static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+    public static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static AppRoomDatabase getDatabase(final Context context) {
+    public static AppRoomDatabase getDatabase(final Context context) {
         if (appRoomDatabase == null) {
             synchronized (AppRoomDatabase.class) {
                 if (appRoomDatabase == null) {

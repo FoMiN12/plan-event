@@ -20,4 +20,7 @@ public interface TaskDao extends CommonDao<Task> {
 
     @Query("SELECT * FROM tasks_table WHERE event_id = :eventId")
     LiveData<List<Task>> getTasksByEventId(int eventId);
+
+    @Query("SELECT * from tasks_table ORDER By creating_date Asc")
+    LiveData<List<Task>> getAllTasks();
 }

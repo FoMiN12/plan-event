@@ -26,7 +26,7 @@ public class ScheduleTask extends EventElement {
     }
     @Ignore
     public ScheduleTask(int eventId, @NonNull String name, String description, @NonNull Date startDate) {
-        this(eventId, name, description, startDate, new Date());
+        this(eventId, name, description, startDate, new Date(startDate.getTime() + 3600000));
     }
     @Ignore
     public ScheduleTask(int eventId, @NonNull String name, Date startDate, Date endDate) {
