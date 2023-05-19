@@ -9,4 +9,7 @@ import com.example.planevent.entities.User;
 public interface UserDao extends CommonDao<User> {
     @Query("DELETE FROM users_table")
     void deleteAllNotes();
+
+    @Query("SELECT * FROM users_table WHERE id LIKE :id")
+    User findById(int id);
 }
