@@ -37,7 +37,7 @@ import java.util.concurrent.Executors;
 @TypeConverters({DateConverter.class})
 public abstract class AppRoomDatabase extends RoomDatabase {
     public abstract TaskDao taskDao();
-    public abstract GuestDao guestDaoDao();
+    public abstract GuestDao guestDao();
     public abstract ExpenseDao expenseDao();
     public abstract InviteTemplateDao inviteTemplateDao();
     public abstract ScheduleTaskDao scheduleTaskDao();
